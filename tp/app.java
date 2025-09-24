@@ -4,10 +4,13 @@ public class app {
     public static void main(String[] args) {
         Scanner t = new Scanner(System.in);
 
+        System.out.println("min: " + Integer.MIN_VALUE);
+        System.out.println("max: " + Integer.MAX_VALUE);
         System.out.println("Insira m: ");
         int m = t.nextInt();
         System.out.println("Insira n: ");
         int n = t.nextInt();
+        t.close();
 
         System.out.println("----------------");
         System.out.println("Função: A(" + m + ", " + n + ")");
