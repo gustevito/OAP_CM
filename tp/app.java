@@ -9,14 +9,25 @@ public class app {
         System.out.println("Insira n: ");
         int n = t.nextInt();
 
-        Ackermann r = new Ackermann(m, n);
-
         System.out.println("----------------");
         System.out.println("Função: A(" + m + ", " + n + ")");
-        r.ackermann(m, n);
+        int r = ackermann(m, n);
         System.out.println("----------------");
-        System.out.println("RESULTADO:" + r.getA());
+        System.out.println("RESULTADO:" + r);
         System.out.println("----------------");
+    }
 
+    public static int ackermann(int m, int n) {
+        int a = 0;
+        if (m == 0) {
+            return n + 1;
+        }
+        if (m > 0 && n == 0) {
+            return ackermann(m - 1, 1) + 1;
+        }
+        if (m > 0 && n > 0) {
+            return ackermann(m - 1, ackermann(m, n - 1));
+        }
+        return a;
     }
 }
